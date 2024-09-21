@@ -1,0 +1,3 @@
+53:00
+
+the reason we are writing the backend backend in root directory is because when we deploy the application the server is going to read the file inside the root directory and understand our code, so need to put the package.json for the backend inside the root directory.
