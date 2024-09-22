@@ -24,6 +24,7 @@ app.listen(3000 , ()=>{
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 
+//If any error occurs in the app, this middleware catches it and responds with an error message.
 app.use((err , req , res , next) => {
     const statuscode = err.statuscode || 500;
     const message = err.message || 'Internal Server Error';

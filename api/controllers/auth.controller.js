@@ -8,7 +8,6 @@ export const signup = async (req, res , next) => {
      if(!username || !email || !password || username==" " || email ===" " || password === ''){
           next(errorHandler(400 , "all fields are required"))
      }
-          
  
      const hashedPassword = bcryptjs.hashSync(password,10)
 
@@ -23,7 +22,7 @@ export const signup = async (req, res , next) => {
           res.json({message: 'signed up successfully '});
      } catch(err){
          next(err)
-         // res.status(500).json({message: err.message});
+         // next(err) passes the error to the error-handling middleware in index.js.
      }
 
   
