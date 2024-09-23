@@ -6,6 +6,7 @@ import Projects from '../src/pages/Projects.jsx'
 import Signin from '../src/pages/Signin.jsx'
 import Signup from '../src/pages/Signup.jsx'
 import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
 
 export default function App() {
   return (
@@ -18,8 +19,8 @@ export default function App() {
           <Route path='/sign-up' element={<Signup/>} />
           <Route path='/dashboard' element={<Dashboard/>} />
           <Route path='/projects' element={<Projects/>} />
-
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
