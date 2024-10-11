@@ -1,5 +1,5 @@
 import { Sidebar } from 'flowbite-react';
-import { HiUser, HiArrowSmRight } from 'react-icons/hi';
+import { HiUser, HiArrowSmRight,HiTable } from 'react-icons/hi';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { signoutSuccess } from '../redux/user/userSlice';
@@ -21,7 +21,7 @@ export default function DashSidebar() {
       const res = await fetch('/api/user/signout', {
         method: 'POST',
       });
-      const data = await res.json();
+      const data = await res.json()
       if (!res.ok) {
         console.log(data.message);
       } else {
@@ -46,6 +46,18 @@ export default function DashSidebar() {
               Profile
             </Sidebar.Item>
           </Link>
+          <div className="mt-4">
+          <Link to='/create-post'>
+            <Sidebar.Item
+              icon={HiTable}
+              labelColor='dark'
+              as='div'
+            >
+              Create Post
+            </Sidebar.Item>
+          </Link>
+          </div>
+
           <Sidebar.Item
             icon={HiArrowSmRight}
             className='cursor-pointer'
