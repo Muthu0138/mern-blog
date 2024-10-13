@@ -57,9 +57,9 @@ export default function Header() {
         className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold dark:text-white"
       >
         <span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">
-          The
+        Writers
         </span>{" "}
-        Blog
+        Haven
       </Link>
       <form onSubmit={handleSubmit}>
         <TextInput
@@ -119,15 +119,15 @@ export default function Header() {
               </Link>
             </Navbar.Link> 
 
-            <Navbar.Link active={path === '/about'} as={'div'}>
-              <Link to='/about'>
-                  About
+            <Navbar.Link active={path === '/create-post'} as={'div'}>
+              <Link to="/create-post">
+                  Write
               </Link>
             </Navbar.Link> 
 
-            <Navbar.Link active={path === '/projects'} as={'div'}>
-              <Link to='/projects'>
-                  Projects
+            <Navbar.Link active={path === "/dashboard?tab=posts"} as={'div'}>
+              <Link to='/dashboard?tab=posts'>
+                  Posts
               </Link>
             </Navbar.Link> 
         </Navbar.Collapse>
