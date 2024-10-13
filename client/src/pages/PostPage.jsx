@@ -65,7 +65,7 @@ export default function PostPage() {
         {post && post.title}
       </h1>
 
-      <p className='text-center text-gray-600'>By: {currentUser.username}</p>
+      <p className='text-center text-gray-600'>By: {post.user}</p>
 
       <Link
         to={`/search?category=${post && post.category}`}

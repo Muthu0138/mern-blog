@@ -12,8 +12,10 @@ import { useState } from 'react';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function CreatePost() {
+  const { currentUser } = useSelector((state) => state.user);
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
@@ -94,7 +96,7 @@ export default function CreatePost() {
             id='title'
             className='flex-1'
             onChange={(e) =>
-              setFormData({ ...formData, title: e.target.value })
+              setFormData({ ...formData, user:currentUser.username , title: e.target.value })
             }
           />
           <Select
