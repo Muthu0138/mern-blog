@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div>
       <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto '>
-        <h1 className='text-3xl font-bold lg:text-6xl'>Welcome to Writers' Haven</h1>
+        <h1 className='text-3xl font-bold lg:text-6xl'>Welcome to Open Space</h1>
         <p className='text-gray-500 text-xs sm:text-sm'>
         Here, everyone has a voice, and every story matters! This is a space where you can unleash your creativity and share your passions with the world. From personal experiences and thought-provoking insights to tutorials and tips on any topic you can imagine, this blog is a community-driven hub for all things expressive. So dive in, explore diverse perspectives, and let your ideas shine brightly in this vibrant tapestry of voices!
         </p>
