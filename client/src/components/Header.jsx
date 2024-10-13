@@ -60,16 +60,18 @@ export default function Header() {
         Space
       </Link>
 
-      <form onSubmit={handleSubmit} className="hidden lg:block">
-        <TextInput
-          type="text"
-          placeholder="search"
-          rightIcon={AiOutlineSearch}
-          className="hidden lg:inline"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </form>
+      {currentUser && (
+        <form onSubmit={handleSubmit} className="hidden lg:block">
+          <TextInput
+            type="text"
+            placeholder="search"
+            rightIcon={AiOutlineSearch}
+            className="hidden lg:inline"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </form>
+      )}
 
       <Button
         className="w-12 h-10 lg:hidden"
@@ -121,40 +123,44 @@ export default function Header() {
         {currentUser && <Navbar.Toggle />}
       </div>
 
-      <Navbar.Collapse>
-        <form onSubmit={handleSubmit} className="block lg:hidden">
-          <TextInput
-            type="text"
-            placeholder="search"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </form>
-        <Link
-          to="/"
-          className={`block py-2 pr-4 pl-3 text-sm md:text-base ${
-            path === "/" ? "text-blue-700" : "text-gray-700"
-          }`}
-        >
-          Home
-        </Link>
-        <Link
-          to="/create-post"
-          className={`block py-2 pr-4 pl-3 text-sm md:text-base ${
-            path === "/create-post" ? "text-blue-700" : "text-gray-700"
-          }`}
-        >
-          Write
-        </Link>
-        <Link
-          to="/dashboard?tab=posts"
-          className={`block py-2 pr-4 pl-3 text-sm md:text-base ${
-            path === "/dashboard?tab=posts" ? "text-blue-700" : "text-gray-700"
-          }`}
-        >
-          Posts
-        </Link>
-      </Navbar.Collapse>
+      {currentUser && (
+        <Navbar.Collapse>
+          <form onSubmit={handleSubmit} className="block lg:hidden">
+            <TextInput
+              type="text"
+              placeholder="search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </form>
+          <Link
+            to="/"
+            className={`block py-2 pr-4 pl-3 text-sm md:text-base ${
+              path === "/" ? "text-blue-700" : "text-gray-700"
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/create-post"
+            className={`block py-2 pr-4 pl-3 text-sm md:text-base ${
+              path === "/create-post" ? "text-blue-700" : "text-gray-700"
+            }`}
+          >
+            Write
+          </Link>
+          <Link
+            to="/dashboard?tab=posts"
+            className={`block py-2 pr-4 pl-3 text-sm md:text-base ${
+              path === "/dashboard?tab=posts"
+                ? "text-blue-700"
+                : "text-gray-700"
+            }`}
+          >
+            Posts
+          </Link>
+        </Navbar.Collapse>
+      )}
     </Navbar>
   );
 }
