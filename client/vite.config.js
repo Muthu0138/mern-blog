@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   server: {
     build: {
-      outDir: 'client/dist', // Output directory for the build
+      outDir: 'dist', // Output directory for the build
     },
     proxy:{
       '/api': {
