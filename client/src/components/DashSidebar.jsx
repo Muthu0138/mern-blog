@@ -4,6 +4,7 @@ import {
   HiArrowSmRight,
   HiTable,
   HiDocumentText,
+  HiOutlineUserGroup
 } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -55,9 +56,7 @@ export default function DashSidebar() {
 
           {currentUser && (
             <Link to="/create-post">
-              <Sidebar.Item icon={HiTable} 
-              as="div"
-              >
+              <Sidebar.Item icon={HiTable} as="div">
                 Create Post
               </Sidebar.Item>
             </Link>
@@ -74,6 +73,19 @@ export default function DashSidebar() {
               </Sidebar.Item>
             </Link>
           )}
+
+          {currentUser.isAdmin && (
+            <Link to="/dashboard?tab=users">
+              <Sidebar.Item
+                active={tab === "users"}
+                icon={HiOutlineUserGroup}
+                as="div"
+              >
+                Users
+              </Sidebar.Item>
+            </Link>
+          )}
+
           <Sidebar.Item
             icon={HiArrowSmRight}
             className="cursor-pointer"
